@@ -6,6 +6,7 @@
 #include <cadmium/modeling/celldevs/grid/cell.hpp>
 #include <cadmium/modeling/celldevs/grid/config.hpp>
 #include "plantPopulationState.hpp"
+#include "plantSpeciesInfo.hpp"
 
 using namespace cadmium::celldevs;
 
@@ -51,6 +52,12 @@ class plantPopulation : public GridCell<plantPopulationState, double> {
 				}
 			}
 		}
+
+		auto species = speciesInfoMap.at(state.tree_type);
+		state.max_resources = species.max_resources;
+		state.produced_resources = species.produced_resources;
+		state.req_to_survive = species.req_to_survive;
+		state.req_to_grow = species.req_to_grow;
 
 		// Cell produces its own resources
 		state.current_resources.water += state.produced_resources.water;

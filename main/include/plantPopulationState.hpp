@@ -62,10 +62,6 @@ bool operator!=(const plantPopulationState& x, const plantPopulationState& y) {
 //! It parses a JSON file and generates the corresponding plantPopulationState object.
 void from_json(const nlohmann::json& j, plantPopulationState& s) {
 	j.at("current_resources").get_to(s.current_resources);
-	j.at("max_resources").get_to(s.max_resources);
-	j.at("produced_resources").get_to(s.produced_resources);
-	j.at("req_to_survive").get_to(s.req_to_survive);
-	j.at("req_to_grow").get_to(s.req_to_grow);
 	j.at("tree_height").get_to(s.tree_height);
 	j.at("tree_type").get_to(s.tree_type);
 }

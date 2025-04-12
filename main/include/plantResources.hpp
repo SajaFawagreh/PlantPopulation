@@ -11,6 +11,10 @@ struct plantResources {
 	uint potassium;
 
 	plantResources() : water(0), sunlight(0), nitrogen(0), potassium(0) {}
+	
+	// Constructor for easy initialization
+    plantResources(uint w, uint s, uint n, uint p) : water(w), sunlight(s), nitrogen(n), potassium(p) {}
+
 };
 
 //! It prints the life of the cell in an output stream.

@@ -15,30 +15,6 @@
           "nitrogen" : 0,
           "potassium" : 0
         },
-        "max_resources" : {
-          "water" : 30,
-          "sunlight" : 30,
-          "nitrogen" : 15,
-          "potassium" : 15
-        },
-        "produced_resources" : {
-          "water" : 5,
-          "sunlight" : 5,
-          "nitrogen" : 3,
-          "potassium" : 2
-        },
-        "req_to_survive" : {
-          "water" : 3,
-          "sunlight" : 3,
-          "nitrogen" : 2,
-          "potassium" : 1
-        },
-        "req_to_grow" : {
-          "water" : 8,
-          "sunlight" : 7,
-          "nitrogen" : 4,
-          "potassium" : 3
-        },
         "tree_height" : 0,
         "tree_type" : 0
       },
@@ -54,30 +30,6 @@
           "nitrogen" : 0,
           "potassium" : 0
         },
-        "max_resources" : {
-          "water" : 30,
-          "sunlight" : 30,
-          "nitrogen" : 15,
-          "potassium" : 15
-        },
-        "produced_resources" : {
-          "water" : 5,
-          "sunlight" : 5,
-          "nitrogen" : 3,
-          "potassium" : 2
-        },
-        "req_to_survive" : {
-          "water" : 3,
-          "sunlight" : 3,
-          "nitrogen" : 2,
-          "potassium" : 1
-        },
-        "req_to_grow" : {
-          "water" : 8,
-          "sunlight" : 7,
-          "nitrogen" : 4,
-          "potassium" : 3
-        },
         "tree_height" : 0,
         "tree_type" : 1
       },
@@ -91,30 +43,6 @@
           "nitrogen" : 0,
           "potassium" : 0
         },
-        "max_resources" : {
-          "water" : 30,
-          "sunlight" : 30,
-          "nitrogen" : 15,
-          "potassium" : 15
-        },
-        "produced_resources" : {
-          "water" : 5,
-          "sunlight" : 5,
-          "nitrogen" : 3,
-          "potassium" : 2
-        },
-        "req_to_survive" : {
-          "water" : 3,
-          "sunlight" : 3,
-          "nitrogen" : 2,
-          "potassium" : 1
-        },
-        "req_to_grow" : {
-          "water" : 8,
-          "sunlight" : 7,
-          "nitrogen" : 4,
-          "potassium" : 3
-        },
         "tree_height" : 0,
         "tree_type" : 2
       },
@@ -127,30 +55,6 @@
           "sunlight" : 0,
           "nitrogen" : 0,
           "potassium" : 0
-        },
-        "max_resources" : {
-          "water" : 30,
-          "sunlight" : 30,
-          "nitrogen" : 15,
-          "potassium" : 15
-        },
-        "produced_resources" : {
-          "water" : 5,
-          "sunlight" : 5,
-          "nitrogen" : 3,
-          "potassium" : 2
-        },
-        "req_to_survive" : {
-          "water" : 3,
-          "sunlight" : 3,
-          "nitrogen" : 2,
-          "potassium" : 1
-        },
-        "req_to_grow" : {
-          "water" : 8,
-          "sunlight" : 7,
-          "nitrogen" : 4,
-          "potassium" : 3
         },
         "tree_height" : 0,
         "tree_type" : 3
