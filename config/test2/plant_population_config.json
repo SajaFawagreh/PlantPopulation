@@ -1,0 +1,161 @@
+{
+  "scenario": {
+    "shape": [10, 10],
+    "origin": [0, 0],
+    "wrapped": false
+  },
+  "cells": {
+    "default": {
+      "delay": "inertial",
+      "model": "plant_population",
+      "state": { 
+        "current_resources" : {
+          "water" : 0,
+          "sunlight" : 0,
+          "nitrogen" : 0,
+          "potassium" : 0
+        },
+        "max_resources" : {
+          "water" : 30,
+          "sunlight" : 30,
+          "nitrogen" : 15,
+          "potassium" : 15
+        },
+        "produced_resources" : {
+          "water" : 5,
+          "sunlight" : 5,
+          "nitrogen" : 3,
+          "potassium" : 2
+        },
+        "req_to_survive" : {
+          "water" : 3,
+          "sunlight" : 3,
+          "nitrogen" : 2,
+          "potassium" : 1
+        },
+        "req_to_grow" : {
+          "water" : 8,
+          "sunlight" : 7,
+          "nitrogen" : 4,
+          "potassium" : 3
+        },
+        "tree_height" : 0,
+        "tree_type" : 0
+      },
+      "neighborhood": [
+        { "type": "von_neumann", "range": 1 }
+      ]
+    },
+    "LocustSapling": {
+      "state": { 
+        "current_resources" : {
+          "water" : 0,
+          "sunlight" : 0,
+          "nitrogen" : 0,
+          "potassium" : 0
+        },
+        "max_resources" : {
+          "water" : 30,
+          "sunlight" : 30,
+          "nitrogen" : 15,
+          "potassium" : 15
+        },
+        "produced_resources" : {
+          "water" : 5,
+          "sunlight" : 5,
+          "nitrogen" : 3,
+          "potassium" : 2
+        },
+        "req_to_survive" : {
+          "water" : 3,
+          "sunlight" : 3,
+          "nitrogen" : 2,
+          "potassium" : 1
+        },
+        "req_to_grow" : {
+          "water" : 8,
+          "sunlight" : 7,
+          "nitrogen" : 4,
+          "potassium" : 3
+        },
+        "tree_height" : 0,
+        "tree_type" : 1
+      },
+      "cell_map": [[1, 1], [4,7], [8,2]]
+    },
+    "PineSapling": {
+      "state": { 
+        "current_resources" : {
+          "water" : 0,
+          "sunlight" : 0,
+          "nitrogen" : 0,
+          "potassium" : 0
+        },
+        "max_resources" : {
+          "water" : 30,
+          "sunlight" : 30,
+          "nitrogen" : 15,
+          "potassium" : 15
+        },
+        "produced_resources" : {
+          "water" : 5,
+          "sunlight" : 5,
+          "nitrogen" : 3,
+          "potassium" : 2
+        },
+        "req_to_survive" : {
+          "water" : 3,
+          "sunlight" : 3,
+          "nitrogen" : 2,
+          "potassium" : 1
+        },
+        "req_to_grow" : {
+          "water" : 8,
+          "sunlight" : 7,
+          "nitrogen" : 4,
+          "potassium" : 3
+        },
+        "tree_height" : 0,
+        "tree_type" : 2
+      },
+      "cell_map": [[2, 8], [5, 5], [9, 3]]
+    },
+    "OakSapling": {
+      "state": { 
+        "current_resources" : {
+          "water" : 0,
+          "sunlight" : 0,
+          "nitrogen" : 0,
+          "potassium" : 0
+        },
+        "max_resources" : {
+          "water" : 30,
+          "sunlight" : 30,
+          "nitrogen" : 15,
+          "potassium" : 15
+        },
+        "produced_resources" : {
+          "water" : 5,
+          "sunlight" : 5,
+          "nitrogen" : 3,
+          "potassium" : 2
+        },
+        "req_to_survive" : {
+          "water" : 3,
+          "sunlight" : 3,
+          "nitrogen" : 2,
+          "potassium" : 1
+        },
+        "req_to_grow" : {
+          "water" : 8,
+          "sunlight" : 7,
+          "nitrogen" : 4,
+          "potassium" : 3
+        },
+        "tree_height" : 0,
+        "tree_type" : 3
+      },
+      "cell_map": [[0, 9], [6, 1], [7, 7]]
+    }
+  }
+}

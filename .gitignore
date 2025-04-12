@@ -1,0 +1,9 @@
+build
+bin
+.vscode
+
+# Ignore all CSV files
+*.csv
+
+# But allow CSV files inside log_files/
+!log_files/**/*.csv
