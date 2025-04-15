@@ -36,19 +36,28 @@ class plantPopulation : public GridCell<plantPopulationState, double> {
 			state.current_resources.potassium += 
 				0.25 * (nStateResources.potassium - state.current_resources.potassium);
 
-			// Does this cell already have a tree? (if not seed can spread from neighbors)
+			// Does this cell already have a tree? (if not, seed can spread from neighbors)
 			if (treeSpecies::None == state.tree_type) {
-				// Is neighboring tree tall enough to spread seed?
-				if (((treeSpecies::Locust == neighborData.state->tree_type) &&
-					(8 <= neighborData.state->tree_height)) ||
-					((treeSpecies::Pine == neighborData.state->tree_type) &&
-					(12 <= neighborData.state->tree_height)) ||
-					((treeSpecies::Oak == neighborData.state->tree_type) &&
-					(20 <= neighborData.state->tree_height)))
-				{
-					// Better sees "preempt" other seeds attempting to move to empty cell
-					// (in order of worst to best: Locust -> Pine -> Oak) 
-					best_seed = (treeSpecies)std::max((int)best_seed, (int)(neighborData.state->tree_type));
+				uint best_elevation = std::numeric_limits<uint>::max();  // track lowest elevation
+				for (const auto& [neighborId, neighborData]: neighborhood) {
+					auto& neighborState = *neighborData.state;
+
+					// Is neighboring tree tall enough to spread seed?
+					bool canSpread = 
+						(neighborState.tree_type == treeSpecies::Locust && neighborState.tree_height >= 8) ||
+						(neighborState.tree_type == treeSpecies::Pine && neighborState.tree_height >= 12) ||
+						(neighborState.tree_type == treeSpecies::Oak && neighborState.tree_height >= 20);
+
+					if (canSpread) {
+						uint elev = neighborState.elevation;
+						if (elev < best_elevation) {
+							best_elevation = elev;
+							best_seed = neighborState.tree_type;
+						} else if (elev == best_elevation) {
+							// If same elevation, choose stronger species
+							best_seed = (treeSpecies)std::max((int)best_seed, (int)neighborState.tree_type);
+						}
+					}
 				}
 			}
 		}

@@ -15,6 +15,7 @@
           "nitrogen" : 0,
           "potassium" : 0
         },
+        "elevation": 0,
         "tree_height" : 0,
         "tree_type" : 0
       },
@@ -30,6 +31,7 @@
           "nitrogen" : 0,
           "potassium" : 0
         },
+        "elevation": 10,
         "tree_height" : 0,
         "tree_type" : 1
       },
@@ -43,6 +45,7 @@
           "nitrogen" : 0,
           "potassium" : 0
         },
+        "elevation": 5,
         "tree_height" : 0,
         "tree_type" : 2
       },
@@ -56,6 +59,7 @@
           "nitrogen" : 0,
           "potassium" : 0
         },
+        "elevation": 2,
         "tree_height" : 0,
         "tree_type" : 3
       },
@@ -87,6 +91,11 @@
         "colors": [[200, 200, 200], [160, 200, 160],[120, 200, 120],[80, 160, 80],[40, 140, 40],[0, 120, 0]],
         "breaks": [0, 0.5, 14.5, 28.5, 42.5, 56.5, 70.5],
         "field": "tree_height"
+      },
+      {
+        "colors": [[220, 220, 220], [194, 178, 128], [139, 69, 19], [34, 139, 34], [0, 100, 0], [255, 255, 255]],
+        "breaks": [0, 1, 5, 10, 20, 30, 40],
+        "field": "elevation"
       },
       {
         "colors": [[200, 200, 200], [200, 100, 100], [100, 200, 100], [100, 100, 200]],
