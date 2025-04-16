@@ -27,14 +27,23 @@ class plantPopulation : public GridCell<plantPopulationState, double> {
 
 			// Calculation for dispersing resources from higher concentrations to lower concentrations
 			// (Based off of calculation from Oil Spill Model shown in class)
-			state.current_resources.water += 
-				0.25 * (nStateResources.water - state.current_resources.water);
-			state.current_resources.sunlight += 
-				0.25 * (nStateResources.sunlight - state.current_resources.sunlight);
-			state.current_resources.nitrogen += 
-				0.25 * (nStateResources.nitrogen - state.current_resources.nitrogen);
-			state.current_resources.potassium += 
-				0.25 * (nStateResources.potassium - state.current_resources.potassium);
+
+			// If either the current cell OR the neighbor is water → only spread/take water
+			if (state.tree_type == treeSpecies::Water || neighborData.state->tree_type == treeSpecies::Water) {
+				// Only spread/take water
+				state.current_resources.water += 
+					0.25 * (nStateResources.water - state.current_resources.water);
+			} else {
+				// Spread/take all resources
+				state.current_resources.water += 
+					0.25 * (nStateResources.water - state.current_resources.water);
+				state.current_resources.sunlight += 
+					0.25 * (nStateResources.sunlight - state.current_resources.sunlight);
+				state.current_resources.nitrogen += 
+					0.25 * (nStateResources.nitrogen - state.current_resources.nitrogen);
+				state.current_resources.potassium += 
+					0.25 * (nStateResources.potassium - state.current_resources.potassium);
+			}
 
 			// Does this cell already have a tree? (if not, seed can spread from neighbors)
 			if (treeSpecies::None == state.tree_type) {
@@ -48,7 +57,15 @@ class plantPopulation : public GridCell<plantPopulationState, double> {
 						(neighborState.tree_type == treeSpecies::Pine && neighborState.tree_height >= 12) ||
 						(neighborState.tree_type == treeSpecies::Oak && neighborState.tree_height >= 20);
 
+					// Check if the species can grow in current soil
+					bool canGrowInSoil = false;
 					if (canSpread) {
+						const auto& speciesInfo = speciesInfoMap.at(neighborState.tree_type);
+						const auto& allowedSoils = speciesInfo.growable_soil;
+						canGrowInSoil = std::find(allowedSoils.begin(), allowedSoils.end(), state.soil_type) != allowedSoils.end();
+					}
+
+					if (canSpread && canGrowInSoil) {
 						uint elev = neighborState.elevation;
 						if (elev < best_elevation) {
 							best_elevation = elev;
@@ -83,60 +100,63 @@ class plantPopulation : public GridCell<plantPopulationState, double> {
 			std::min(state.current_resources.nitrogen, state.max_resources.nitrogen);
 		state.current_resources.potassium = 
 			std::min(state.current_resources.potassium, state.max_resources.potassium);
-
-		// Plant seed if there is not already on in the cell
-		if (treeSpecies::None == state.tree_type) {
-			state.tree_type = best_seed;
-		} else {
-			// Does tree lack enough of any one resource in order to survive?
-			if ((state.req_to_survive.water > state.current_resources.water) ||
-				(state.req_to_survive.sunlight > state.current_resources.sunlight) ||
-				(state.req_to_survive.nitrogen > state.current_resources.nitrogen) ||
-				(state.req_to_survive.potassium > state.current_resources.potassium))
-			{
-				// Dead tree become available for new seeds to spread again
-				state.tree_height = 0;
-				state.tree_type = treeSpecies::None;
-			} 
-			// Is tree at max height for species?
-			else if (((treeSpecies::Locust == state.tree_type) &&
-						(40 > state.tree_height)) ||
-						((treeSpecies::Pine == state.tree_type) &&
-						(55 > state.tree_height)) ||
-						((treeSpecies::Oak == state.tree_type) &&
-						(70 > state.tree_height)))
-			{
-				// Does tree have enough resources to grow?
-				if ((state.req_to_grow.water <= state.current_resources.water) &&
-					(state.req_to_grow.sunlight <= state.current_resources.sunlight) &&
-					(state.req_to_grow.nitrogen <= state.current_resources.nitrogen) &&
-					(state.req_to_grow.potassium <= state.current_resources.potassium))
+			
+		if (state.tree_type != treeSpecies::Water) {
+			// Plant seed if there is not already on in the cell
+			if (treeSpecies::None == state.tree_type) {
+				state.tree_type = best_seed;
+			} else {
+				// Does tree lack enough of any one resource in order to survive?
+				if ((state.req_to_survive.water > state.current_resources.water) ||
+					(state.req_to_survive.sunlight > state.current_resources.sunlight) ||
+					(state.req_to_survive.nitrogen > state.current_resources.nitrogen) ||
+					(state.req_to_survive.potassium > state.current_resources.potassium))
 				{
-					// Consume resources required to grow then increase height
+					// Dead tree become available for new seeds to spread again
+					state.tree_height = 0;
+					state.tree_type = treeSpecies::None;
+				} 
+				// Is tree at max height for species?
+				else if (((treeSpecies::Locust == state.tree_type) &&
+							(40 > state.tree_height)) ||
+							((treeSpecies::Pine == state.tree_type) &&
+							(55 > state.tree_height)) ||
+							((treeSpecies::Oak == state.tree_type) &&
+							(70 > state.tree_height)))
+				{
+					// Does tree have enough resources to grow?
+					if ((state.req_to_grow.water <= state.current_resources.water) &&
+						(state.req_to_grow.sunlight <= state.current_resources.sunlight) &&
+						(state.req_to_grow.nitrogen <= state.current_resources.nitrogen) &&
+						(state.req_to_grow.potassium <= state.current_resources.potassium))
+					{
+						// Consume resources required to grow then increase height
+						state.current_resources.water = 
+							state.current_resources.water - state.req_to_grow.water;
+						state.current_resources.sunlight = 
+							state.current_resources.sunlight - state.req_to_grow.sunlight;
+						state.current_resources.nitrogen = 
+							state.current_resources.nitrogen - state.req_to_grow.nitrogen;
+						state.current_resources.potassium = 
+							state.current_resources.potassium - state.req_to_grow.potassium;
+					
+						state.tree_height++;
+					}
+				}
+				else {
+					// Consume resources needed to survive
 					state.current_resources.water = 
-						state.current_resources.water - state.req_to_grow.water;
+						state.current_resources.water - state.req_to_survive.water;
 					state.current_resources.sunlight = 
-						state.current_resources.sunlight - state.req_to_grow.sunlight;
+						state.current_resources.sunlight - state.req_to_survive.sunlight;
 					state.current_resources.nitrogen = 
-						state.current_resources.nitrogen - state.req_to_grow.nitrogen;
+						state.current_resources.nitrogen - state.req_to_survive.nitrogen;
 					state.current_resources.potassium = 
-						state.current_resources.potassium - state.req_to_grow.potassium;
-				
-					state.tree_height++;
+						state.current_resources.potassium - state.req_to_survive.potassium;
 				}
 			}
-			else {
-				// Consume resources needed to survive
-				state.current_resources.water = 
-					state.current_resources.water - state.req_to_survive.water;
-				state.current_resources.sunlight = 
-					state.current_resources.sunlight - state.req_to_survive.sunlight;
-				state.current_resources.nitrogen = 
-					state.current_resources.nitrogen - state.req_to_survive.nitrogen;
-				state.current_resources.potassium = 
-					state.current_resources.potassium - state.req_to_survive.potassium;
-			}
 		}
+
 		return state;
 	}
 
