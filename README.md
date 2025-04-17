@@ -37,6 +37,7 @@ This repository is arranged in the following manner:
 │   │   ├── plantPopulationCell.hpp     # Defines cell behavior and resource-based state updates
 │   │   ├── plantPopulationState.hpp    # Defines cell state: resources, tree type, and height
 │   │   └── plantResources.hpp          # Defines and compares cell resources (water, sunlight, nitrogen, potassium)
+│   │   └── plantSpeciesInfo.hpp        # Defines species-specific parameters including supported soil types
 │   ├── main.cpp                        # Main file to simulate the full system
 │   └── CMakeLists.txt                  # CMake configuration for the main directory
 ├── simulation_videos/                  # WebM simulation outputs for each test
@@ -57,10 +58,12 @@ This project includes one **atomic model** that defines the behavior of each pla
 **File:** [`plantPopulationCell.hpp`](main/include/plantPopulationCell.hpp)  
 
 The **plantPopulation** atomic model defines the local behavior of each cell. At every simulation step, each cell:
-- Exchanges **water**, **sunlight**, **nitrogen**, and **potassium** with neighboring cells through diffusion.
-- Produces its own resources.
-- Determines whether to **survive** or **grow** based on resource thresholds.
-- Increments tree height or dies based on environmental conditions.
+- Exchanges **water**, **sunlight**, **nitrogen**, and **potassium** with neighboring cells through diffusion.  
+- **Produces** its own resources.  
+- Determines whether to **survive** or **grow** based on resource thresholds.  
+- **Increments tree height** or **dies** based on environmental conditions.  
+- **Restricts tree growth** based on **soil type**, defined using the new `plantSpeciesInfo.hpp` mapping.  
+- Supports **water regions (e.g., lakes)** which only share water and do **not support tree growth**.
 
 ---
 
