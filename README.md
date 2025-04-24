@@ -13,25 +13,11 @@ This repository is arranged in the following manner:
 ```sh
 .
 ├── config/                             # Configuration files for each test scenario
-│   ├── initialTest/
-│   │   ├── plant_population_config.json
-│   │   └── plant_population_visualization_config.json
-│   ├── test1/
-│   │   ├── plant_population_config.json
-│   │   └── plant_population_visualization_config.json
-│   ├── test2/
-│   │   ├── plant_population_config.json
-│   │   └── plant_population_visualization_config.json
+│   ├── plant_population_config.json
+│   └── plant_population_visualization_config.json
 ├── log_files/                          # Output CSV logs generated after simulation
-│   ├── initialTest/
-│   │   ├── grid_log.csv
-│   │   └── grid_visualization_log.csv
-│   ├── test1/
-│   │   ├── grid_log.csv
-│   │   └── grid_visualization_log.csv
-│   └── test2/
-│       ├── grid_log.csv
-│       └── grid_visualization_log.csv
+│   ├── grid_log.csv
+│   └── grid_visualization_log.csv
 ├── main/                               # Source code directory
 │   ├── include/                        # Header files for the model
 │   │   ├── plantPopulationCell.hpp     # Defines cell behavior and resource-based state updates
@@ -77,7 +63,7 @@ The **Grid Coupled Model** automatically connects a grid of `plantPopulation` at
 - Propagation of tree types.
 - Local competition and survival mechanisms.
 
-The coupled model is instantiated from a JSON configuration file and executed using Cadmium’s simulation engine, with outputs logged to either `grid_log.csv` or `grid_visualization_log.csv`, depending on the test scenario.
+The coupled model is instantiated from a JSON configuration file and executed using Cadmium’s simulation engine, with outputs logged to either `grid_log.csv` or `grid_visualization_log.csv`, depending on the selected config file.
 
 ## Dependencies
 This project assumes that you have Cadmium installed in a location accessible by the environment variable $CADMIUM.
@@ -94,43 +80,95 @@ __NOTE__: Everytime you run build_sim.sh, the contents of `build/` and `bin/` wi
 
 ## **Main Simulation Files**  
 
-This section contains the main file used to execute and test the **Plant Population Simulation**. The simulation is configured using different test scenarios, each defined in its own configuration folder.  
+This section contains the main file used to execute and test the **Plant Population Simulation**. The simulation is configured using a single JSON file located in the `config/` folder.
 
 ### **Main Simulation File**  
 **File:** [main.cpp](main/main.cpp)  
 
 This file initializes and runs the **Plant Population Model** using **Cadmium**. It loads the configuration file specified at runtime and simulates the evolution of tree populations based on resource availability and defined rules.  
 
-### **Running a Test**  
+### **Running the Simulation**  
 
-To run a specific test scenario, use the following command:  
-
-```bash
-./bin/plant_population config/<test_name>/plant_population_config.json
-```
-
-Examples:  
-```bash
-./bin/plant_population config/initialTest/plant_population_config.json  
-./bin/plant_population config/test1/plant_population_config.json  
-./bin/plant_population config/test2/plant_population_config.json  
-```
-
-This will generate log files in the corresponding `log_files/<test_name>/` directory.
-
-### **Visualizing the Simulation**  
-
-To run a simulation specifically for visualization (e.g., to produce logs formatted for graphical output), use the visualization config instead:  
+To run the simulation using the main configuration file, use the following command:
 
 ```bash
-./bin/plant_population config/<test_name>/plant_population_visualization_config.json
+./bin/plant_population config/plant_population_config.json
 ```
 
-Examples:  
-```bash
-./bin/plant_population config/initialTest/plant_population_visualization_config.json
-./bin/plant_population config/test1/plant_population_visualization_config.json
-./bin/plant_population config/test2/plant_population_visualization_config.json
-```
+This will generate a log file at `log_files/grid_log.csv`.
 
-This will generate `grid_visualization_log.csv` under `log_files/<test_name>/`, which can be used with your visualization tools.
+## **Simulation Visualization Options**
+
+There are two ways to visualize the output of this simulation: using the [Cell-DEVS Web Viewer](https://devssim.carleton.ca/cell-devs-viewer/) or by integrating with QGIS.
+
+### **Option 1: Visualize with Cell-DEVS Web Viewer**
+
+To view your simulation output in the browser:
+
+1. Run the visualization configuration:
+
+    ```bash
+    ./bin/plant_population config/plant_population_visualization_config.json
+    ```
+
+2. This will generate a log file at:
+
+    ```bash
+    log_files/grid_visualization_log.csv
+    ```
+
+3. Visit https://devssim.carleton.ca/cell-devs-viewer/.
+
+4. Upload:
+
+    - `plant_population_visualization_config.json` (from the `config/` folder)
+    - `grid_visualization_log.csv` (from the `log_files/` folder)
+
+This tool will render the grid over time and display multiple side-by-side panels—each representing a specific field (e.g., resources, tree height, soil type, elevation, and tree type). This allows you to observe how resources evolve and how trees grow, compete, and spread based on real-time environmental conditions and model rules.
+
+### **Option 1: Visualize on a Real Map with QGIS**
+
+We adapted a custom QGIS plugin to support visualizing tree dynamics on real-world geographic maps.
+Below are the three main steps to set it up and use it with our simulation:
+
+#### **Step 1: Install QGIS**
+
+1. Navigate to the following link and click "Skip it and go to download": https://qgis.org/download/
+
+    ![](doc/qgis_1.png)
+
+2. Press "Long Term Version for Windows (3.40 LTR)"
+
+    ![](doc/qgis_2.png)
+
+3. When the download finishes, run the installer and press "Next"
+
+    ![](doc/qgis_3.png)
+
+4. Check "I accept the terms in the License Agreement" and press "Next"
+
+    ![](doc/qgis_4.png)
+
+5. Press "Next"
+
+    ![](doc/qgis_5.png)
+
+6. Press "Install"
+
+    ![](doc/qgis_6.png)
+
+7. Press on the administrative access icon and press "Yes"
+
+    ![](doc/qgis_7.png)
+
+7. Press "Finish"
+
+    ![](doc/qgis_8.png)
+
+9. To verify your installation, type in "QGIS" the Windows search. You should see something like the following
+
+    ![](doc/qgis_9.png)
+
+#### **Step 2: Add the Plugin**
+
+#### **Step 3: Run the Simulation & Visualize**
