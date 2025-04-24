@@ -11,6 +11,7 @@ This repository is arranged in the following manner:
 ```sh
 .
 ├── doc                                 # Pictures for README
+├── simulation_video/                   # WebM simulation output for advnaced model
 ├── .gitignore                          # Git ignore file
 └── README.md                           # Advanced Model documentation
 ```
