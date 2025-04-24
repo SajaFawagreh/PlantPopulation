@@ -11,7 +11,7 @@ The system is structured using **atomic** and **coupled DEVS models**, ensuring 
 To download this project, run the following command in your Ubuntu terminal:
 
 ```bash
-    git clone https://github.com/<your-username>/PlantPopulation.git
+git clone https://github.com/<your-username>/PlantPopulation.git
 ```
 
 Then navigate into the cloned directory:
