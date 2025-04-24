@@ -10,7 +10,7 @@ This repository is arranged in the following manner:
 
 ```sh
 .
-├── config/                             # Configuration files for each test scenario
+├── config/                             # Configuration files for simulation
 │   ├── plant_population_config.json
 │   └── plant_population_visualization_config.json
 ├── log_files/                          # Output CSV logs generated after simulation
@@ -19,7 +19,7 @@ This repository is arranged in the following manner:
 ├── main/                               # Source code directory
 │   ├── include/                        # Header files for the model
 │   │   ├── plantPopulationCell.hpp     # Defines cell behavior and resource-based state updates
-│   │   ├── plantPopulationState.hpp    # Defines cell state: resources, tree type, and height
+│   │   ├── plantPopulationState.hpp    # Defines cell state: resources, soil type, elevation, tree type, and height
 │   │   └── plantResources.hpp          # Defines and compares cell resources (water, sunlight, nitrogen, potassium)
 │   │   └── plantSpeciesInfo.hpp        # Defines species-specific parameters including supported soil types
 │   ├── main.cpp                        # Main file to simulate the full system
