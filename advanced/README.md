@@ -62,6 +62,14 @@ Key interactions include:
 - Growth and spread of tree populations based on local environmental factors.
 - Realistic competition between neighboring cells based on map-based layout.
 
+## Build
+To build this project, run:
+```sh
+source build_sim.sh
+```
+
+__NOTE__: Everytime you run build_sim.sh, the contents of `build/` and `bin/` will be replaced.
+
 ## **How to Visualize the Simulation**
 
 We adapted a custom QGIS plugin to support visualizing tree dynamics on real-world geographic maps.
