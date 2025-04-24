@@ -1,0 +1,824 @@
+{
+    "cells": {
+        "default": {
+            "delay": "inertial",
+            "model": "plant_population",
+            "state": {
+                "current_resources": {
+                    "water": 0,
+                    "sunlight": 0,
+                    "nitrogen": 0,
+                    "potassium": 0
+                },
+                "soil_type": 0,
+                "elevation": 0,
+                "tree_height": 0,
+                "tree_type": 0
+            }
+        },
+        "480813_5094285": {
+            "state": {
+                "current_resources": {
+                    "water": 0,
+                    "sunlight": 0,
+                    "nitrogen": 0,
+                    "potassium": 0
+                },
+                "soil_type": 0,
+                "elevation": 316,
+                "tree_height": 0,
+                "tree_type": 0
+            },
+            "neighborhood": {
+                "480863_5094285": 50,
+                "480813_5094235": 50
+            }
+        },
+        "480863_5094285": {
+            "state": {
+                "current_resources": {
+                    "water": 0,
+                    "sunlight": 0,
+                    "nitrogen": 0,
+                    "potassium": 0
+                },
+                "soil_type": 0,
+                "elevation": 318,
+                "tree_height": 0,
+                "tree_type": 0
+            },
+            "neighborhood": {
+                "480813_5094285": 50,
+                "480863_5094235": 50
+            }
+        },
+        "480813_5094235": {
+            "state": {
+                "current_resources": {
+                    "water": 0,
+                    "sunlight": 0,
+                    "nitrogen": 0,
+                    "potassium": 0
+                },
+                "soil_type": 0,
+                "elevation": 312,
+                "tree_height": 0,
+                "tree_type": 1
+            },
+            "neighborhood": {
+                "480863_5094235": 50,
+                "480813_5094185": 50,
+                "480813_5094285": 50
+            }
+        },
+        "480863_5094235": {
+            "state": {
+                "current_resources": {
+                    "water": 0,
+                    "sunlight": 0,
+                    "nitrogen": 0,
+                    "potassium": 0
+                },
+                "soil_type": 0,
+                "elevation": 307,
+                "tree_height": 0,
+                "tree_type": 1
+            },
+            "neighborhood": {
+                "480913_5094235": 50,
+                "480813_5094235": 50,
+                "480863_5094185": 50,
+                "480863_5094285": 50
+            }
+        },
+        "480913_5094235": {
+            "state": {
+                "current_resources": {
+                    "water": 0,
+                    "sunlight": 0,
+                    "nitrogen": 0,
+                    "potassium": 0
+                },
+                "soil_type": 0,
+                "elevation": 308,
+                "tree_height": 0,
+                "tree_type": 1
+            },
+            "neighborhood": {
+                "480963_5094235": 50,
+                "480863_5094235": 50,
+                "480913_5094185": 50
+            }
+        },
+        "480963_5094235": {
+            "state": {
+                "current_resources": {
+                    "water": 0,
+                    "sunlight": 0,
+                    "nitrogen": 0,
+                    "potassium": 0
+                },
+                "soil_type": 0,
+                "elevation": 307,
+                "tree_height": 0,
+                "tree_type": 1
+            },
+            "neighborhood": {
+                "480913_5094235": 50,
+                "480963_5094185": 50
+            }
+        },
+        "480813_5094185": {
+            "state": {
+                "current_resources": {
+                    "water": 0,
+                    "sunlight": 0,
+                    "nitrogen": 0,
+                    "potassium": 0
+                },
+                "soil_type": 0,
+                "elevation": 307,
+                "tree_height": 0,
+                "tree_type": 1
+            },
+            "neighborhood": {
+                "480863_5094185": 50,
+                "480813_5094135": 50,
+                "480813_5094235": 50
+            }
+        },
+        "480863_5094185": {
+            "state": {
+                "current_resources": {
+                    "water": 0,
+                    "sunlight": 0,
+                    "nitrogen": 0,
+                    "potassium": 0
+                },
+                "soil_type": 0,
+                "elevation": 307,
+                "tree_height": 0,
+                "tree_type": 1
+            },
+            "neighborhood": {
+                "480913_5094185": 50,
+                "480813_5094185": 50,
+                "480863_5094135": 50,
+                "480863_5094235": 50
+            }
+        },
+        "480913_5094185": {
+            "state": {
+                "current_resources": {
+                    "water": 0,
+                    "sunlight": 0,
+                    "nitrogen": 0,
+                    "potassium": 0
+                },
+                "soil_type": 0,
+                "elevation": 307,
+                "tree_height": 0,
+                "tree_type": 1
+            },
+            "neighborhood": {
+                "480963_5094185": 50,
+                "480863_5094185": 50,
+                "480913_5094135": 50,
+                "480913_5094235": 50
+            }
+        },
+        "480963_5094185": {
+            "state": {
+                "current_resources": {
+                    "water": 0,
+                    "sunlight": 0,
+                    "nitrogen": 0,
+                    "potassium": 0
+                },
+                "soil_type": 0,
+                "elevation": 306,
+                "tree_height": 0,
+                "tree_type": 1
+            },
+            "neighborhood": {
+                "481013_5094185": 50,
+                "480913_5094185": 50,
+                "480963_5094135": 50,
+                "480963_5094235": 50
+            }
+        },
+        "481013_5094185": {
+            "state": {
+                "current_resources": {
+                    "water": 0,
+                    "sunlight": 0,
+                    "nitrogen": 0,
+                    "potassium": 0
+                },
+                "soil_type": 0,
+                "elevation": 308,
+                "tree_height": 0,
+                "tree_type": 1
+            },
+            "neighborhood": {
+                "481063_5094185": 50,
+                "480963_5094185": 50,
+                "481013_5094135": 50
+            }
+        },
+        "481063_5094185": {
+            "state": {
+                "current_resources": {
+                    "water": 0,
+                    "sunlight": 0,
+                    "nitrogen": 0,
+                    "potassium": 0
+                },
+                "soil_type": 0,
+                "elevation": 316,
+                "tree_height": 0,
+                "tree_type": 1
+            },
+            "neighborhood": {
+                "481013_5094185": 50,
+                "481063_5094135": 50
+            }
+        },
+        "480813_5094135": {
+            "state": {
+                "current_resources": {
+                    "water": 0,
+                    "sunlight": 0,
+                    "nitrogen": 0,
+                    "potassium": 0
+                },
+                "soil_type": 0,
+                "elevation": 307,
+                "tree_height": 0,
+                "tree_type": 1
+            },
+            "neighborhood": {
+                "480863_5094135": 50,
+                "480813_5094085": 50,
+                "480813_5094185": 50
+            }
+        },
+        "480863_5094135": {
+            "state": {
+                "current_resources": {
+                    "water": 0,
+                    "sunlight": 0,
+                    "nitrogen": 0,
+                    "potassium": 0
+                },
+                "soil_type": 0,
+                "elevation": 307,
+                "tree_height": 0,
+                "tree_type": 1
+            },
+            "neighborhood": {
+                "480913_5094135": 50,
+                "480813_5094135": 50,
+                "480863_5094085": 50,
+                "480863_5094185": 50
+            }
+        },
+        "480913_5094135": {
+            "state": {
+                "current_resources": {
+                    "water": 0,
+                    "sunlight": 0,
+                    "nitrogen": 0,
+                    "potassium": 0
+                },
+                "soil_type": 0,
+                "elevation": 308,
+                "tree_height": 0,
+                "tree_type": 1
+            },
+            "neighborhood": {
+                "480963_5094135": 50,
+                "480863_5094135": 50,
+                "480913_5094085": 50,
+                "480913_5094185": 50
+            }
+        },
+        "480963_5094135": {
+            "state": {
+                "current_resources": {
+                    "water": 0,
+                    "sunlight": 0,
+                    "nitrogen": 0,
+                    "potassium": 0
+                },
+                "soil_type": 0,
+                "elevation": 309,
+                "tree_height": 0,
+                "tree_type": 1
+            },
+            "neighborhood": {
+                "481013_5094135": 50,
+                "480913_5094135": 50,
+                "480963_5094085": 50,
+                "480963_5094185": 50
+            }
+        },
+        "481013_5094135": {
+            "state": {
+                "current_resources": {
+                    "water": 0,
+                    "sunlight": 0,
+                    "nitrogen": 0,
+                    "potassium": 0
+                },
+                "soil_type": 0,
+                "elevation": 308,
+                "tree_height": 0,
+                "tree_type": 1
+            },
+            "neighborhood": {
+                "481063_5094135": 50,
+                "480963_5094135": 50,
+                "481013_5094085": 50,
+                "481013_5094185": 50
+            }
+        },
+        "481063_5094135": {
+            "state": {
+                "current_resources": {
+                    "water": 0,
+                    "sunlight": 0,
+                    "nitrogen": 0,
+                    "potassium": 0
+                },
+                "soil_type": 0,
+                "elevation": 308,
+                "tree_height": 0,
+                "tree_type": 0
+            },
+            "neighborhood": {
+                "481113_5094135": 50,
+                "481013_5094135": 50,
+                "481063_5094085": 50,
+                "481063_5094185": 50
+            }
+        },
+        "481113_5094135": {
+            "state": {
+                "current_resources": {
+                    "water": 0,
+                    "sunlight": 0,
+                    "nitrogen": 0,
+                    "potassium": 0
+                },
+                "soil_type": 0,
+                "elevation": 314,
+                "tree_height": 0,
+                "tree_type": 0
+            },
+            "neighborhood": {
+                "481163_5094135": 50,
+                "481063_5094135": 50,
+                "481113_5094085": 50
+            }
+        },
+        "481163_5094135": {
+            "state": {
+                "current_resources": {
+                    "water": 0,
+                    "sunlight": 0,
+                    "nitrogen": 0,
+                    "potassium": 0
+                },
+                "soil_type": 0,
+                "elevation": 314,
+                "tree_height": 0,
+                "tree_type": 0
+            },
+            "neighborhood": {
+                "481113_5094135": 50,
+                "481163_5094085": 50
+            }
+        },
+        "480813_5094085": {
+            "state": {
+                "current_resources": {
+                    "water": 0,
+                    "sunlight": 0,
+                    "nitrogen": 0,
+                    "potassium": 0
+                },
+                "soil_type": 0,
+                "elevation": 307,
+                "tree_height": 0,
+                "tree_type": 1
+            },
+            "neighborhood": {
+                "480863_5094085": 50,
+                "480813_5094035": 50,
+                "480813_5094135": 50
+            }
+        },
+        "480863_5094085": {
+            "state": {
+                "current_resources": {
+                    "water": 0,
+                    "sunlight": 0,
+                    "nitrogen": 0,
+                    "potassium": 0
+                },
+                "soil_type": 0,
+                "elevation": 307,
+                "tree_height": 0,
+                "tree_type": 1
+            },
+            "neighborhood": {
+                "480913_5094085": 50,
+                "480813_5094085": 50,
+                "480863_5094035": 50,
+                "480863_5094135": 50
+            }
+        },
+        "480913_5094085": {
+            "state": {
+                "current_resources": {
+                    "water": 0,
+                    "sunlight": 0,
+                    "nitrogen": 0,
+                    "potassium": 0
+                },
+                "soil_type": 0,
+                "elevation": 307,
+                "tree_height": 0,
+                "tree_type": 1
+            },
+            "neighborhood": {
+                "480963_5094085": 50,
+                "480863_5094085": 50,
+                "480913_5094035": 50,
+                "480913_5094135": 50
+            }
+        },
+        "480963_5094085": {
+            "state": {
+                "current_resources": {
+                    "water": 0,
+                    "sunlight": 0,
+                    "nitrogen": 0,
+                    "potassium": 0
+                },
+                "soil_type": 0,
+                "elevation": 307,
+                "tree_height": 0,
+                "tree_type": 0
+            },
+            "neighborhood": {
+                "481013_5094085": 50,
+                "480913_5094085": 50,
+                "480963_5094035": 50,
+                "480963_5094135": 50
+            }
+        },
+        "481013_5094085": {
+            "state": {
+                "current_resources": {
+                    "water": 0,
+                    "sunlight": 0,
+                    "nitrogen": 0,
+                    "potassium": 0
+                },
+                "soil_type": 0,
+                "elevation": 307,
+                "tree_height": 0,
+                "tree_type": 0
+            },
+            "neighborhood": {
+                "481063_5094085": 50,
+                "480963_5094085": 50,
+                "481013_5094035": 50,
+                "481013_5094135": 50
+            }
+        },
+        "481063_5094085": {
+            "state": {
+                "current_resources": {
+                    "water": 0,
+                    "sunlight": 0,
+                    "nitrogen": 0,
+                    "potassium": 0
+                },
+                "soil_type": 0,
+                "elevation": 307,
+                "tree_height": 0,
+                "tree_type": 0
+            },
+            "neighborhood": {
+                "481113_5094085": 50,
+                "481013_5094085": 50,
+                "481063_5094035": 50,
+                "481063_5094135": 50
+            }
+        },
+        "481113_5094085": {
+            "state": {
+                "current_resources": {
+                    "water": 0,
+                    "sunlight": 0,
+                    "nitrogen": 0,
+                    "potassium": 0
+                },
+                "soil_type": 0,
+                "elevation": 310,
+                "tree_height": 0,
+                "tree_type": 0
+            },
+            "neighborhood": {
+                "481163_5094085": 50,
+                "481063_5094085": 50,
+                "481113_5094035": 50,
+                "481113_5094135": 50
+            }
+        },
+        "481163_5094085": {
+            "state": {
+                "current_resources": {
+                    "water": 0,
+                    "sunlight": 0,
+                    "nitrogen": 0,
+                    "potassium": 0
+                },
+                "soil_type": 0,
+                "elevation": 310,
+                "tree_height": 0,
+                "tree_type": 0
+            },
+            "neighborhood": {
+                "481213_5094085": 50,
+                "481113_5094085": 50,
+                "481163_5094035": 50,
+                "481163_5094135": 50
+            }
+        },
+        "481213_5094085": {
+            "state": {
+                "current_resources": {
+                    "water": 0,
+                    "sunlight": 0,
+                    "nitrogen": 0,
+                    "potassium": 0
+                },
+                "soil_type": 0,
+                "elevation": 308,
+                "tree_height": 0,
+                "tree_type": 0
+            },
+            "neighborhood": {
+                "481263_5094085": 50,
+                "481163_5094085": 50,
+                "481213_5094035": 50
+            }
+        },
+        "481263_5094085": {
+            "state": {
+                "current_resources": {
+                    "water": 0,
+                    "sunlight": 0,
+                    "nitrogen": 0,
+                    "potassium": 0
+                },
+                "soil_type": 0,
+                "elevation": 305,
+                "tree_height": 0,
+                "tree_type": 0
+            },
+            "neighborhood": {
+                "481213_5094085": 50,
+                "481263_5094035": 50
+            }
+        },
+        "480813_5094035": {
+            "state": {
+                "current_resources": {
+                    "water": 0,
+                    "sunlight": 0,
+                    "nitrogen": 0,
+                    "potassium": 0
+                },
+                "soil_type": 0,
+                "elevation": 307,
+                "tree_height": 0,
+                "tree_type": 1
+            },
+            "neighborhood": {
+                "480863_5094035": 50,
+                "480813_5094085": 50
+            }
+        },
+        "480863_5094035": {
+            "state": {
+                "current_resources": {
+                    "water": 0,
+                    "sunlight": 0,
+                    "nitrogen": 0,
+                    "potassium": 0
+                },
+                "soil_type": 0,
+                "elevation": 307,
+                "tree_height": 0,
+                "tree_type": 0
+            },
+            "neighborhood": {
+                "480913_5094035": 50,
+                "480813_5094035": 50,
+                "480863_5094085": 50
+            }
+        },
+        "480913_5094035": {
+            "state": {
+                "current_resources": {
+                    "water": 0,
+                    "sunlight": 0,
+                    "nitrogen": 0,
+                    "potassium": 0
+                },
+                "soil_type": 0,
+                "elevation": 307,
+                "tree_height": 0,
+                "tree_type": 0
+            },
+            "neighborhood": {
+                "480963_5094035": 50,
+                "480863_5094035": 50,
+                "480913_5094085": 50
+            }
+        },
+        "480963_5094035": {
+            "state": {
+                "current_resources": {
+                    "water": 0,
+                    "sunlight": 0,
+                    "nitrogen": 0,
+                    "potassium": 0
+                },
+                "soil_type": 0,
+                "elevation": 307,
+                "tree_height": 0,
+                "tree_type": 0
+            },
+            "neighborhood": {
+                "481013_5094035": 50,
+                "480913_5094035": 50,
+                "480963_5094085": 50
+            }
+        },
+        "481013_5094035": {
+            "state": {
+                "current_resources": {
+                    "water": 0,
+                    "sunlight": 0,
+                    "nitrogen": 0,
+                    "potassium": 0
+                },
+                "soil_type": 0,
+                "elevation": 307,
+                "tree_height": 0,
+                "tree_type": 0
+            },
+            "neighborhood": {
+                "481063_5094035": 50,
+                "480963_5094035": 50,
+                "481013_5094085": 50
+            }
+        },
+        "481063_5094035": {
+            "state": {
+                "current_resources": {
+                    "water": 0,
+                    "sunlight": 0,
+                    "nitrogen": 0,
+                    "potassium": 0
+                },
+                "soil_type": 0,
+                "elevation": 307,
+                "tree_height": 0,
+                "tree_type": 0
+            },
+            "neighborhood": {
+                "481113_5094035": 50,
+                "481013_5094035": 50,
+                "481063_5094085": 50
+            }
+        },
+        "481113_5094035": {
+            "state": {
+                "current_resources": {
+                    "water": 0,
+                    "sunlight": 0,
+                    "nitrogen": 0,
+                    "potassium": 0
+                },
+                "soil_type": 0,
+                "elevation": 307,
+                "tree_height": 0,
+                "tree_type": 0
+            },
+            "neighborhood": {
+                "481163_5094035": 50,
+                "481063_5094035": 50,
+                "481113_5094085": 50
+            }
+        },
+        "481163_5094035": {
+            "state": {
+                "current_resources": {
+                    "water": 0,
+                    "sunlight": 0,
+                    "nitrogen": 0,
+                    "potassium": 0
+                },
+                "soil_type": 0,
+                "elevation": 306,
+                "tree_height": 0,
+                "tree_type": 0
+            },
+            "neighborhood": {
+                "481213_5094035": 50,
+                "481113_5094035": 50,
+                "481163_5094085": 50
+            }
+        },
+        "481213_5094035": {
+            "state": {
+                "current_resources": {
+                    "water": 0,
+                    "sunlight": 0,
+                    "nitrogen": 0,
+                    "potassium": 0
+                },
+                "soil_type": 0,
+                "elevation": 306,
+                "tree_height": 0,
+                "tree_type": 0
+            },
+            "neighborhood": {
+                "481263_5094035": 50,
+                "481163_5094035": 50,
+                "481213_5094085": 50
+            }
+        },
+        "481263_5094035": {
+            "state": {
+                "current_resources": {
+                    "water": 0,
+                    "sunlight": 0,
+                    "nitrogen": 0,
+                    "potassium": 0
+                },
+                "soil_type": 0,
+                "elevation": 306,
+                "tree_height": 0,
+                "tree_type": 0
+            },
+            "neighborhood": {
+                "481313_5094035": 50,
+                "481213_5094035": 50,
+                "481263_5094085": 50
+            }
+        },
+        "481313_5094035": {
+            "state": {
+                "current_resources": {
+                    "water": 0,
+                    "sunlight": 0,
+                    "nitrogen": 0,
+                    "potassium": 0
+                },
+                "soil_type": 0,
+                "elevation": 306,
+                "tree_height": 0,
+                "tree_type": 0
+            },
+            "neighborhood": {
+                "481363_5094035": 50,
+                "481263_5094035": 50
+            }
+        },
+        "481363_5094035": {
+            "state": {
+                "current_resources": {
+                    "water": 0,
+                    "sunlight": 0,
+                    "nitrogen": 0,
+                    "potassium": 0
+                },
+                "soil_type": 0,
+                "elevation": 306,
+                "tree_height": 0,
+                "tree_type": 0
+            },
+            "neighborhood": {
+                "481313_5094035": 50
+            }
+        }
+    }
+}
