@@ -47,7 +47,7 @@ class plantPopulation : public GridCell<plantPopulationState, double> {
 
 			// Does this cell already have a tree? (if not, seed can spread from neighbors)
 			if (treeSpecies::None == state.tree_type) {
-				uint best_elevation = std::numeric_limits<uint>::max();  // track lowest elevation
+				uint best_elevation_diff = std::numeric_limits<uint>::max();  // track lowest elevation
 				for (const auto& [neighborId, neighborData]: neighborhood) {
 					auto& neighborState = *neighborData.state;
 
@@ -66,15 +66,16 @@ class plantPopulation : public GridCell<plantPopulationState, double> {
 					}
 
 					if (canSpread && canGrowInSoil) {
-						uint elev = neighborState.elevation;
-						if (elev < best_elevation) {
-							best_elevation = elev;
+						uint elev_diff = std::abs((int)neighborState.elevation - (int)state.elevation);
+					
+						if (elev_diff < best_elevation_diff) {
+							best_elevation_diff = elev_diff;
 							best_seed = neighborState.tree_type;
-						} else if (elev == best_elevation) {
-							// If same elevation, choose stronger species
+						} else if (elev_diff == best_elevation_diff) {
+							// If same elevation difference, choose stronger species
 							best_seed = (treeSpecies)std::max((int)best_seed, (int)neighborState.tree_type);
 						}
-					}
+					}					
 				}
 			}
 		}

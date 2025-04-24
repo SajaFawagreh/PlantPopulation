@@ -15,10 +15,10 @@ struct SpeciesInfo {
 };
 
 const std::map<treeSpecies, SpeciesInfo> speciesInfoMap = {
-    {treeSpecies::None,   SpeciesInfo(plantResources(30, 30, 15, 15), plantResources(5, 5, 3, 2), plantResources(3, 3, 2, 1), plantResources(8, 7, 4, 3), {soilType::Dry, soilType::Clay})},
-    {treeSpecies::Locust, SpeciesInfo(plantResources(30, 30, 15, 15), plantResources(5, 5, 3, 2), plantResources(3, 3, 2, 1), plantResources(8, 7, 4, 3), {soilType::Dry})},
-    {treeSpecies::Pine,   SpeciesInfo(plantResources(30, 30, 15, 15), plantResources(5, 5, 3, 2), plantResources(3, 3, 2, 1), plantResources(8, 7, 4, 3), {soilType::Dry, soilType::Clay})},
-    {treeSpecies::Oak,    SpeciesInfo(plantResources(30, 30, 15, 15), plantResources(5, 5, 3, 2), plantResources(3, 3, 2, 1), plantResources(8, 7, 4, 3), {soilType::Clay})},
+    {treeSpecies::None,   SpeciesInfo(plantResources(30, 30, 15, 15), plantResources(8, 8, 8, 8), plantResources(0, 0, 0, 0), plantResources(0, 0, 0, 0), {soilType::Dry, soilType::Clay})},
+    {treeSpecies::Locust, SpeciesInfo(plantResources(30, 30, 15, 15), plantResources(6, 6, 6, 6), plantResources(2, 2, 1, 1), plantResources(8, 8, 7, 7), {soilType::Dry})},
+    {treeSpecies::Pine,   SpeciesInfo(plantResources(30, 30, 15, 15), plantResources(5, 5, 5, 5), plantResources(2, 2, 2, 2), plantResources(7, 7, 7, 7), {soilType::Dry, soilType::Clay})},
+    {treeSpecies::Oak,    SpeciesInfo(plantResources(30, 30, 15, 15), plantResources(4, 4, 4, 4), plantResources(3, 3, 2, 2), plantResources(9, 9, 8, 8), {soilType::Clay})},
     {treeSpecies::Water,  SpeciesInfo(plantResources(30, 0, 0, 0),    plantResources(10, 0, 0, 0), plantResources(0, 0, 0, 0), plantResources(0, 0, 0, 0), {})}
 };
 

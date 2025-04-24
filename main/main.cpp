@@ -32,12 +32,9 @@ int main(int argc, char ** argv) {
 	std::string configFilePath = argv[1];
 	double simTime = (argc > 2) ? std::stod(argv[2]) : 200;
 
-	// Extract test name (e.g., "initialTest") from path
-	std::string testName = fs::path(configFilePath).parent_path().filename().string();
-
 	// Define log file paths
-	std::string gridLogPath = "log_files/" + testName + "/grid_log.csv";
-	std::string visLogPath = "log_files/" + testName + "/grid_visualization_log.csv";
+	std::string gridLogPath = "log_files/grid_log.csv";
+	std::string visLogPath = "log_files/grid_visualization_log.csv";
 
 	auto model = std::make_shared<GridCellDEVSCoupled<plantPopulationState, double>>("plantPopulation", addGridCell, configFilePath);
 	model->buildModel();
