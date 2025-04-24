@@ -31,20 +31,19 @@ int main(int argc, char ** argv) {
 	}
 
 	std::string configFilePath = argv[1];
-	//double simTime = (argc > 2) ? std::stod(argv[2]) : 200;
-	double simTime = 200;
+	double simTime = (argc > 2) ? std::stod(argv[2]) : 200;
 
-	//std::string logFileName = fs::path(argv[2]).parent_path().filename().string();
-	std::string logFileName = argv[2];
+	// Define log file paths
+	std::string mapLogPath = "log_files/map_log.csv";
 
 	auto model = std::make_shared<AsymmCellDEVSCoupled<plantPopulationState, double>>("plantPopulation", addCell, configFilePath);
 	model->buildModel();
 	
 	auto rootCoordinator = RootCoordinator(model);
 
-	rootCoordinator.setLogger<CSVLogger>(logFileName, ";");
+	rootCoordinator.setLogger<CSVLogger>(mapLogPath, ";");
 	
 	rootCoordinator.start();
-	rootCoordinator.simulate(simTime); // TODO OP changed to hardcoded for now
+	rootCoordinator.simulate(simTime);
 	rootCoordinator.stop();
 }

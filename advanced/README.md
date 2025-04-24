@@ -10,8 +10,23 @@ This repository is arranged in the following manner:
 
 ```sh
 .
+├── config/                             # Configuration file for the simulation
+│   ├── map.json
 ├── doc                                 # Pictures for README
-├── simulation_video/                   # WebM simulation output for advnaced model
+├── log_files/                          # Output CSV log generated after simulation
+│   ├── map_log.csv
+├── main/                               # Source code directory
+│   ├── include/                        # Header files for the model
+│   │   ├── plantPopulationCell.hpp     # Defines cell behavior and resource-based state updates
+│   │   ├── plantPopulationState.hpp    # Defines cell state: resources, soil type, elevation, tree type, and height
+│   │   └── plantResources.hpp          # Defines and compares cell resources (water, sunlight, nitrogen, potassium)
+│   │   └── plantSpeciesInfo.hpp        # Defines species-specific parameters including supported soil types
+│   ├── main.cpp                        # Main file to simulate the full system
+│   └── CMakeLists.txt                  # CMake configuration for the main directory
+├── simulation_video/                   # WebM simulation output for advanced model
+│   ├── PlantPopulation_simulation.webm
+├── build_sim.sh                        # Build script for Cadmium simulation
+├── CMakeLists.txt                      # Root-level CMake configuration
 ├── .gitignore                          # Git ignore file
 └── README.md                           # Advanced Model documentation
 ```
@@ -90,6 +105,8 @@ Below are the three main steps to set it up and use it with our simulation:
 
     ![](doc/qgis_9.png)
 
-### **Step 2: Add the Plugin**
+### **Step 2: Add the Plugin, Run the Simulation, and Visualize**
 
-### **Step 3: Run the Simulation & Visualize**
+To complete this step, follow the short tutorial video linked below. It demonstrates how to install the plugin, run the simulation, and visualize the results directly on the map using QGIS.
+
+// TODO: add link to video
