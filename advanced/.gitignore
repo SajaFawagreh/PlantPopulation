@@ -6,4 +6,4 @@ bin
 *.csv
 
 # But allow CSV files inside log_files/
-!log_files/**/*.csv
+!log_file/**/*.csv
