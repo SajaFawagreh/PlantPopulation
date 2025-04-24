@@ -126,7 +126,7 @@ To view your simulation output in the browser:
 
 This tool will render the grid over time and display multiple side-by-side panels—each representing a specific field (e.g., resources, tree height, soil type, elevation, and tree type). This allows you to observe how resources evolve and how trees grow, compete, and spread based on real-time environmental conditions and model rules.
 
-### **Option 1: Visualize on a Real Map with QGIS**
+### **Option 2: Visualize on a Real Map with QGIS**
 
 We adapted a custom QGIS plugin to support visualizing tree dynamics on real-world geographic maps.
 Below are the three main steps to set it up and use it with our simulation:
