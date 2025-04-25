@@ -113,6 +113,10 @@ We adapted a custom QGIS plugin to extract real-world environmental data directl
 
     ![](doc/qgis_9.png)
 
-### **Step 2: Add the Plugin, Get the Configuration File, and Run the Simulation**
+### **Step 2: Download the Maps**
+
+Please download the dtm_1m_utm18_w_1_109.tif and landcover-2020-classification.tif files from this [link](https://github.com/SajaFawagreh/PlantPopulation/releases/tag/v0.1)
+
+### **Step 3: Add the Plugin, Get the Configuration File, and Run the Simulation**
 
 To complete this step, follow the short tutorial video linked here. It demonstrates how to install the plugin, extract the configuration file from the map, and run the simulation to generate the output.
