@@ -12,7 +12,7 @@ This repository is arranged in the following manner:
 .
 ├── config/                             # Configuration file for the simulation
 │   ├── map.json
-├── doc                                 # Pictures for README
+├── doc/                                # Pictures for README
 ├── log_files/                          # Output CSV log generated after simulation
 │   ├── map_log.csv
 ├── main/                               # Source code directory
@@ -25,6 +25,7 @@ This repository is arranged in the following manner:
 │   └── CMakeLists.txt                  # CMake configuration for the main directory
 ├── simulation_video/                   # WebM simulation output for advanced model
 │   ├── PlantPopulation_simulation.webm
+├── plant_population_simulator_plugin/  # Contains the files required for the QGIS plugin integration
 ├── build_sim.sh                        # Build script for Cadmium simulation
 ├── CMakeLists.txt                      # Root-level CMake configuration
 ├── .gitignore                          # Git ignore file
@@ -70,10 +71,9 @@ source build_sim.sh
 
 __NOTE__: Everytime you run build_sim.sh, the contents of `build/` and `bin/` will be replaced.
 
-## **How to Visualize the Simulation**
+## **How to Use QGIS to Generate the Input Configuration and run the Simulation**
 
-We adapted a custom QGIS plugin to support visualizing tree dynamics on real-world geographic maps.
-Below are the three main steps to set it up and use it with our simulation:
+We adapted a custom QGIS plugin to extract real-world environmental data directly from maps. This data is used to automatically generate the simulation’s input configuration file, which is then used to run the model.
 
 ### **Step 1: Install QGIS**
 
