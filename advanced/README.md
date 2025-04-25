@@ -1,7 +1,7 @@
 # Plant Population - Advanced Cell DEVS Model
 
 ## Introduction
-This repository contains the advanced version of the Cell-DEVS Plant Population model. In this version, the configuration file is automatically generated from real-world maps using a **custom QGIS plugin**, and the simulation output is visualized directly on the same map.
+This repository contains the advanced version of the Cell-DEVS Plant Population model. In this version, the input configuration is automatically generated from real-world maps using a **custom QGIS plugin**, and the simulation is run based on that data.
 
 To support this integration with QGIS, the model was re-implemented using **asymmetric Cell-DEVS**. Due to time limitations, **tree type differentiation** and **soil type compatibility** were removed from this version, but all other features are fully functional.
 
