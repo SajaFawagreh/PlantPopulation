@@ -1,0 +1,7 @@
+[general]
+name=Plant Population Simulator
+description=Load and convert map files to JSON, then execute simulation.
+version=0.2
+qgisMinimumVersion=3.34.15
+author=Owen Petersen
+email=owenpetersen@cmail.carleton.com
