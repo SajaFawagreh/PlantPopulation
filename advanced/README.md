@@ -113,8 +113,6 @@ Below are the three main steps to set it up and use it with our simulation:
 
     ![](doc/qgis_9.png)
 
-### **Step 2: Add the Plugin, Run the Simulation, and Visualize**
+### **Step 2: Add the Plugin, Get the Configuration File, and Run the Simulation**
 
-To complete this step, follow the short tutorial video linked below. It demonstrates how to install the plugin, run the simulation, and visualize the results directly on the map using QGIS.
-
-// TODO: add link to video
+To complete this step, follow the short tutorial video linked here. It demonstrates how to install the plugin, extract the configuration file from the map, and run the simulation to generate the output.
