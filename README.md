@@ -38,7 +38,7 @@ This project includes two versions of the simulation:
 
 - `basic/` – A standalone version that runs the full model and outputs logs viewable using the [Cell-DEVS Web Viewer](https://devssim.carleton.ca/cell-devs-viewer/).
 
-- `advanced/` – A QGIS-integrated version that visualizes the model’s input and output directly on a real-world map.
+- `advanced/` – A QGIS-integrated version that extracts information from real-world maps to automatically generate the configuration file for the simulation.
 
 To get started:
 
