@@ -28,7 +28,7 @@ This repository is arranged in the following manner:
 ```sh
 .
 ├── basic/                              # Basic model (no QGIS)
-├── advanced/                           # QGIS-integrated version
+├── advanced/                           # Advanced model (QGIS-integrated)
 ├── .gitignore                          # Git ignore file
 └── README.md                           # Project documentation
 ```
