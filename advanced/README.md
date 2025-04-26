@@ -43,7 +43,7 @@ The **plantPopulation** atomic model defines the local behavior of each cell. At
 - Determines whether to **survive** or **grow** based on resource thresholds.  
 - **Increments tree height** or **dies** based on environmental conditions.
 - Supports **water regions (e.g., lakes)** which only share water and do **not support tree growth**.
-- This version supports a **single tree type (Locust)** to simplify integration with the QGIS plugin.
+- This version supports a **single tree type (Locust)** and a **single soil type (dry)** to simplify integration with the QGIS plugin.
 
 ---
 
