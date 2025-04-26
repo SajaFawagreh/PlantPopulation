@@ -47,7 +47,7 @@ The **plantPopulation** atomic model defines the local behavior of each cell. At
 
 ---
 
-### **2. Grid Coupled Model**  
+### **2. Asymmetric Coupled Model**  
 **Constructed in:** [`main.cpp`](main/main.cpp)
   
 **Type:** `AsymetricCellDEVSCoupled<plantPopulationState, double>`
