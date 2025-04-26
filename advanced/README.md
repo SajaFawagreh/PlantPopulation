@@ -23,8 +23,6 @@ This repository is arranged in the following manner:
 │   │   └── plantSpeciesInfo.hpp        # Defines species-specific parameters including supported soil types
 │   ├── main.cpp                        # Main file to simulate the full system
 │   └── CMakeLists.txt                  # CMake configuration for the main directory
-├── simulation_video/                   # WebM simulation output for advanced model
-│   ├── PlantPopulation_simulation.webm
 ├── plant_population_simulator_plugin/  # Contains the files required for the QGIS plugin integration
 ├── build_sim.sh                        # Build script for Cadmium simulation
 ├── CMakeLists.txt                      # Root-level CMake configuration
@@ -119,4 +117,4 @@ Please download the dtm_1m_utm18_w_1_109.tif and landcover-2020-classification.t
 
 ### **Step 3: Add the Plugin, Get the Configuration File, and Run the Simulation**
 
-To complete this step, follow the short tutorial video linked here. It demonstrates how to install the plugin, extract the configuration file from the map, and run the simulation to generate the output.
+To complete this step, follow the short tutorial video linked [here](https://mediaspace.carleton.ca/media/t/1_qtwl1u96). It demonstrates how to install the plugin, extract the configuration file from the map, and run the simulation to generate the output.
