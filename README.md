@@ -27,10 +27,11 @@ This repository is arranged in the following manner:
 
 ```sh
 .
-├── basic/                              # Basic model (no QGIS)
-├── advanced/                           # Advanced model (QGIS-integrated)
-├── .gitignore                          # Git ignore file
-└── README.md                           # Project documentation
+├── basic/                                # Basic model (no QGIS)
+├── advanced/                             # Advanced model (QGIS-integrated)
+├── .gitignore                            # Git ignore file
+├── Plant_Population-Cell_DEVS_Model.pdf  # Final project report detailing model design, implementation, and results
+└── README.md                             # Project documentation
 ```
 
 ## Choosing a Version
